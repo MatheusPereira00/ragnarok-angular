@@ -1,0 +1,20 @@
+<div *ngIf="findAllProducts$ | async as products">
+  <div class="card" *ngFor="let product of products" style="margin: 5rem">
+    <div class="card-body">
+      <h5 class="card-title">{{product.title}}</h5>
+      <p class="card-text">
+        {{ product.description }}
+      </p>
+      <p class="card-text">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </p>
+    </div>
+    <img
+      style="height: 5rem; width: 5rem; margin: 1rem"
+      src="{{ product.image }}"
+      class="card-img-bottom"
+      alt="..."
+    />
+    <a style="margin: 1rem; width: 6rem;" href="#" class="btn btn-primary">+</a>
+  </div>
+</div>
